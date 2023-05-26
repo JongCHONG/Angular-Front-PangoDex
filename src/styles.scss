@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/scss/bootstrap";
+
+/*  
+Thanks to: Usama Tahir
+https://medium.com/@AmJustSam
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* CSS which you need for blurred box */
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  background-image: url(http://bit.ly/2gPLxZ4);
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  color: wheat;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-styles {
+  background-color: transparent;
+  border-color: wheat;
+  color: wheat;
+  &:hover {
+    background-color: wheat;
+    color: black;
+  }
+}

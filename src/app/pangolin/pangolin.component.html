@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="card mb-3" style="max-width: 540px" *ngIf="pangolin">
+    <div class="row g-0">
+      <div class="col-md-4 image">
+        <img
+          src="../../assets/sablaireau.png"
+          class="img-fluid rounded-start"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title pb-1">Pangolin {{ pangolin.username }}</h5>
+          <p class="card-text">Nom: {{ pangolin.username }}</p>
+          <p class="card-text">Rôle: {{ pangolin.role }}</p>
+          <p *ngIf="isLoggedIn()" class="card-text">Changer de rôle:</p>
+          <select
+            *ngIf="isLoggedIn()"
+            class="form-select form-select-sm mb-3"
+            id="role"
+            [(ngModel)]="pangolin.role"
+            name="role"
+            (change)="updateRole(pangolin)"
+          >
+            <option
+              *ngFor="let role of roles"
+              [value]="role"
+              [selected]="role === pangolin.role"
+            >
+              {{ role }}
+            </option>
+          </select>
+          <p class="card-text">Amis:
+            <span *ngFor="let friendName of friendNames; let last = last">
+              {{ friendName }}{{ last ? '' : ',' }}
+            </span>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

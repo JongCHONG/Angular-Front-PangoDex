@@ -1,0 +1,22 @@
+.nav {
+  width: 100%;
+  margin: 10% 0;
+  border-color: wheat;
+  padding-left: 10%;
+  a:hover {
+    border-color: wheat;
+  }
+  .nav-item {
+    .nav-link {
+      color: wheat;
+    }
+    .active {
+      background-color: transparent;
+      border-color: wheat;
+    }
+  }
+}
+
+.disconnect {
+  cursor: pointer;
+}

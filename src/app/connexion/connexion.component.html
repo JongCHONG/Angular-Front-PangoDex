@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Connexion</h1>
+
+  <div class="form-wrapper">
+    <form [formGroup]="connexionForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="username" class="form-label">Nom d'utilisateur</label>
+        <input type="text" id="username" name="username" formControlName="username" class="form-control" required>
+        <div class="invalid-feedback">
+          Veuillez fournir un nom d'utilisateur.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input type="password" id="password" name="password" formControlName="password" class="form-control" required>
+        <div class="invalid-feedback">
+          Veuillez fournir un mot de passe.
+        </div>
+        Si vous n'avez pas de compte? <a href="/inscription" class="link-danger">Inscrivez-vous</a>
+      </div>
+      <button type="submit" class="btn btn-styles">Se connecter</button>
+
+
+      <div class="error-message">{{ errorMessage }}</div>
+    </form>
+  </div>
+</div>

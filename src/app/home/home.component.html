@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>List of Pangolins</h1>
+
+  <div *ngIf="pangolins.length > 0">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Rôle</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pangolin of pangolins">
+          <td>{{ pangolin.username }}</td>
+          <td>{{ pangolin.role }}</td>
+          <td>
+            <a [routerLink]="'/pangolin/' + pangolin._id" class="profil me-1">
+              <fa-icon title="Voir profil" [icon]="faUser"></fa-icon>
+            </a>
+            <fa-icon
+              class="addDelete"
+              *ngIf="!isCurrentUser(pangolin)"
+              [icon]="pangolin.icon"
+              (click)="modifyFriends(pangolin)"
+              [title]="
+                inFriendsList(pangolin) ? 'Supprimer ami' : 'Ajouter ami'
+              "
+            ></fa-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <p *ngIf="toggleMessage">{{ message }}</p>
+  </div>
+
+  <div *ngIf="pangolins.length === 0">No pangolins found.</div>
+</div>

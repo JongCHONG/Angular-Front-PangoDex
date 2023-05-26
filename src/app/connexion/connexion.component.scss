@@ -1,0 +1,14 @@
+.container {
+  width: 500px;
+}
+
+.btn-styles {
+  background-color: transparent;
+  border-color: wheat;
+  color: wheat;
+  &:hover {
+    background-color: wheat;
+    color: black;
+
+  }
+}

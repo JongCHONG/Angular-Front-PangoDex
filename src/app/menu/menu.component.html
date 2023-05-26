@@ -1,0 +1,34 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="isRouteActive('/')" [attr.href]="'/'"
+      >List des pangolins</a
+    >
+  </li>
+  <li class="nav-item" [hidden]="isLoggedIn()">
+    <a
+      class="nav-link"
+      [class.active]="isRouteActive('/connexion')"
+      [attr.href]="'/connexion'"
+      >Connexion</a
+    >
+  </li>
+  <li class="nav-item" [hidden]="isLoggedIn()">
+    <a
+      class="nav-link"
+      [class.active]="isRouteActive('/inscription')"
+      [attr.href]="'/inscription'"
+      >Inscription</a
+    >
+  </li>
+  <li class="nav-item" [hidden]="!isLoggedIn()">
+    <a class="nav-link disconnect" (click)="logout()">Déconnexion</a>
+  </li>
+  <li class="nav-item" [hidden]="!isLoggedIn()">
+    <a
+      class="nav-link"
+      [class.active]="isRouteActive('/profil')"
+      [attr.href]="'/pangolin/' + getCurrentUserId()"
+      >Mon profil</a
+    >
+  </li>
+</ul>
