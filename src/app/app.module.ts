@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { PangolinComponent } from './pangolin/pangolin.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MenuComponent } from './menu/menu.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MenuComponent } from './menu/menu.component';
     ConnexionComponent,
     HomeComponent,
     PangolinComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
