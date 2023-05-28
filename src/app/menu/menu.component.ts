@@ -15,8 +15,12 @@ export class MenuComponent {
   }
   
   getCurrentUserId(): string {
-    const currentUser = JSON.parse(this.authService.getCurrentUser());
-    return currentUser.currentUser._id;
+    const currentUser = this.authService.getCurrentUser();
+    if (currentUser) {
+      const parsedUser = JSON.parse(currentUser);
+      return parsedUser.currentUser._id;
+    }
+    return '';
   }
 
   isLoggedIn(): boolean {
