@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'connexion', component: ConnexionComponent },
   { path: '', component: HomeComponent, canActivate: [CanActivateTeam]},
   { path: 'pangolin/:id', component: PangolinComponent},
-  { path: '**', component: NotFoundComponent }, // Wildcard route for 404
+  { path: '404', component: NotFoundComponent},
+  { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];  
 
 @NgModule({
